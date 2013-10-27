@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{12392A02-E963-4038-82FD-76D3062379B3}</ProjectGuid>
+    <ProjectGuid>{12392A02-E963-4038-42AF-76D3062379B3}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -57,7 +57,7 @@ nmake /f Makefile.nmake all</NMakeReBuildCommandLine>
     <NMakeForcedIncludes Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeForcedIncludes)</NMakeForcedIncludes>
     <NMakeAssemblySearchPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
     <NMakeForcedUsingAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeForcedUsingAssemblies)</NMakeForcedUsingAssemblies>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../;C:\wireshark-win32-libs-1.6\WPdpack\include;C:\wireshark-win32-libs-1.6\gtk2\lib\glib-2.0\include;C:\wireshark-win32-libs-1.6\gtk2\include\glib-2.0;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../;C:\Wireshark-win32-libs-1.10\WPdpack\include;C:\Wireshark-win32-libs-1.10\gtk2\lib\glib-2.0\include;C:\Wireshark-win32-libs-1.10\gtk2\include\glib-2.0;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <BuildLog>
