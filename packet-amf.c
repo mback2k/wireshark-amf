@@ -318,11 +318,11 @@ static void dissect_amf(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 void proto_register_amf(void)
 {
 	/* A header field is something you can search/filter on.
-	* 
-	* We create a structure to register our fields. It consists of an
-	* array of hf_register_info structures, each of which are of the format
-	* {&(field id), {name, abbrev, type, display, strings, bitmask, blurb, HFILL}}.
-	*/
+	 *
+	 * We create a structure to register our fields. It consists of an
+	 * array of hf_register_info structures, each of which are of the format
+	 * {&(field id), {name, abbrev, type, display, strings, bitmask, blurb, HFILL}}.
+	 */
 	static hf_register_info hf[] = {
 		{ &hf_amf_version,
 			{ "Version", "amf.version", FT_UINT16, BASE_DEC, NULL, 0x0, "AMF Version", HFILL }
