@@ -133,7 +133,7 @@ typedef struct amf_ref {
 
 static amf_ref* amf_ref_new()
 {
-	amf_ref *ref = (amf_ref*)ep_alloc(sizeof(amf_ref));
+	amf_ref *ref = (amf_ref*) ep_alloc(sizeof(amf_ref));
 
 	ref->amf0objects = g_ptr_array_new();
 	ref->amf3objects = g_ptr_array_new();
@@ -301,8 +301,8 @@ static void dissect_amf(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 
 	if (check_col(pinfo->cinfo, COL_INFO)) {
 		col_clear(pinfo->cinfo, COL_INFO);
-		col_add_fstr(pinfo->cinfo, COL_INFO, "%d > %d", 
-			pinfo->srcport, 
+		col_add_fstr(pinfo->cinfo, COL_INFO, "%d > %d",
+			pinfo->srcport,
 			pinfo->destport
 		);
 	}
@@ -387,8 +387,8 @@ void proto_register_amf(void)
 	};
 
 	proto_amf = proto_register_protocol("Action Message Format", PROTO_TAG_AMF, "amf");
-	proto_register_field_array(proto_amf, hf, array_length (hf));
-	proto_register_subtree_array(ett, array_length (ett));
+	proto_register_field_array(proto_amf, hf, array_length(hf));
+	proto_register_subtree_array(ett, array_length(ett));
 
 	register_dissector("amf", dissect_amf, proto_amf);
 }
@@ -398,13 +398,10 @@ void proto_reg_handoff_amf(void)
 	static int amf_initialized = FALSE;
 	static dissector_handle_t amf_handle;
 
-	if (!amf_initialized)
-	{
+	if (!amf_initialized) {
 		amf_handle = create_dissector_handle(dissect_amf, proto_amf);
 		amf_initialized = TRUE;
-	}
-	else
-	{
+	} else {
 		dissector_delete_string("media_type", "application/x-amf", amf_handle);
 	}
 
